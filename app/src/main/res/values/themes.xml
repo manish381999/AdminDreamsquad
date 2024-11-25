@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.DreamSquad" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">#1B1A2A</item>
+        <item name="colorPrimaryDark">#0D0D0F</item>
+        <item name="colorAccent">#3B9AD7</item>
+        <item name="android:textColor">#FFFFFF</item>
+
+    </style>
+
+    <style name="Theme.Transparent" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="colorPrimary">@color/Splash_Color</item>
+        <item name="colorPrimaryDark">@color/Splash_Color</item>
+        <item name="colorAccent">@color/white</item>
+    </style></resources>
