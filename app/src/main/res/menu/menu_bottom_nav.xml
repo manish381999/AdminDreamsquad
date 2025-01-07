@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/dashboardFragment"
+        android:icon="@drawable/ic_dashboard"
+        android:title="Dashboard" />
+
+    <item
+        android:id="@+id/cricketFragment"
+        android:icon="@drawable/ic_cricket"
+        android:title="Cricket" />
+
+    <item
+        android:id="@+id/footballFragment"
+        android:icon="@drawable/ic_football"
+        android:title="Football" />
+
+    <item
+        android:id="@+id/kabaddiFragment"
+        android:icon="@drawable/ic_kabaddi"
+        android:title="Kabaddi" />
+</menu>

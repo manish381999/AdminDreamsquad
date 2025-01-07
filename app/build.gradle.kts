@@ -53,6 +53,8 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -60,6 +62,17 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
     implementation (libs.sdp.android)
+
+    implementation (libs.retrofit)
+    implementation (libs.converter.gson)
+    // OkHttp for network requests
+    implementation(libs.okhttp)
+    // ViewModel and LiveData
+    implementation (libs.lifecycle.viewmodel.ktx)
+    implementation (libs.lifecycle.livedata.ktx)
+
+
 
 }

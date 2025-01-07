@@ -1,6 +1,7 @@
 package com.tie.admindreamsquad
 
 import android.Manifest
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.ConnectivityManager
@@ -17,10 +18,14 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.tie.admindreamsquad.databinding.ActivitySplashBinding
 import com.tie.admindreamsquad.ui.credentials.LoginActivity
+import com.tie.admindreamsquad.ui.dashboard.BaseActivity
+import com.tie.dreamsquad.utils.SP
 
 
 class SplashActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySplashBinding
+    private lateinit var mContext: Context
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,9 +35,12 @@ class SplashActivity : AppCompatActivity() {
         // Load the scale and fade animation
         val scaleFadeAnim = AnimationUtils.loadAnimation(this, R.anim.scale_fade)
         binding.appLogo.startAnimation(scaleFadeAnim)
+        mContext = this
 
         // Check permissions for notifications and storage
         checkAndRequestPermissions()
+        startActivityAsPerResult()
+
     }
 
     private fun checkAndRequestPermissions() {
@@ -142,9 +150,18 @@ class SplashActivity : AppCompatActivity() {
 
     private fun navigateToLogin() {
         Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this, LoginActivity::class.java))
-            finish()
         }, 3000) // 3 seconds delay
+        startActivityAsPerResult()
+
+    }
+
+    private fun startActivityAsPerResult() {
+        if (SP.getPreferences(mContext, SP.LOGIN_STATUS) != SP.SP_TRUE) {
+            startActivity(Intent(mContext, LoginActivity::class.java))
+        } else {
+            startActivity(Intent(mContext, BaseActivity::class.java))
+        }
+        finish()
     }
 
     companion object {
